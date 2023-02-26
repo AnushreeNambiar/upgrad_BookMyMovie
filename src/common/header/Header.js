@@ -1,4 +1,30 @@
 import React, { Component } from "react";
+import './Header.css';
+import Button from '@material-ui/core/Button';
+import logo from '../../assets/logo.svg';
+import Modal from 'react-modal';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import Typography from '@material-ui/core/Typography';
+import FormControl from '@material-ui/core/FormControl';
+import InputLabel from '@material-ui/core/InputLabel';
+import Input from '@material-ui/core/Input';
+import PropTypes from 'prop-types';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import { Link } from 'react-router-dom';
+
+
+const TabsContainer = function (props) {
+    return (
+        <Typography component="div" style={{ padding: 0, textAlign: 'center' }}>
+            {props.children}
+        </Typography>
+    )
+}
+
+TabsContainer.propTypes = {
+    children: PropTypes.node.isRequired
+}
 
 class Header extends Component {
     constructor() {
@@ -203,7 +229,7 @@ class Header extends Component {
                     </Tabs>
 
                     {this.state.value === 0 &&
-                        <TabContainer>
+                        <TabsContainer>
                             <FormControl required>
                                 <InputLabel htmlFor="username">Username</InputLabel>
                                 <Input id="username" type="text" username={this.state.username} onChange={this.inputUsernameHandler} />
@@ -229,11 +255,11 @@ class Header extends Component {
                             }
                             <br /><br />
                             <Button variant="contained" color="primary" onClick={this.loginClickHandler}>LOGIN</Button>
-                        </TabContainer>
+                        </TabsContainer>
                     }
 
                     {this.state.value === 1 &&
-                        <TabContainer>
+                        <TabsContainer>
                             <FormControl required>
                                 <InputLabel htmlFor="firstname">First Name</InputLabel>
                                 <Input id="firstname" type="text" firstname={this.state.firstname} onChange={this.inputFirstNameHandler} />
@@ -283,7 +309,7 @@ class Header extends Component {
                             }
                             <br /><br />
                             <Button variant="contained" color="primary" onClick={this.registerClickHandler}>REGISTER</Button>
-                        </TabContainer>
+                        </TabsContainer>
                     }
                 </Modal>
             </div>
