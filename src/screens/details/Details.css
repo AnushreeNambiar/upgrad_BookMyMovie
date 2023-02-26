@@ -1,0 +1,109 @@
+/* It should have a left margin of 24px.
+It should have a top margin of 8px.
+It should have a bottom margin of 0px.
+It should have a height of 24px.
+When a user hovers/focuses on this button, the cursor should change to a pointer that displays a pointing hand.
+ */
+.backtoHome {
+    margin-left: 24px;
+    margin-top: 8px;
+    margin-bottom: 0px;
+    height: 24px;
+    cursor: pointer;
+  }
+
+  /* The page should be divided into three parts, left, middle and right, at a ratio of 20:60:20. You must use the flex property of CSS and set the value of display as flex for the page. */
+
+  .leftDetails {
+    width: 20%;
+    text-align: center;
+  }
+  .middleDetails {
+    width: 60%;
+  }
+   
+  .rightDetails {
+    width: 20%;
+  }
+
+  /* You must use the flex property of CSS and set the value of display as flex for the page. */
+
+  .flex-containerDetails {
+    display: flex;
+  }
+  
+  .flex-containerDetails>div {
+    margin: 0px 16px;
+  }
+  /* It should also have a margin of 16px from the top. */
+  .marginTop16 {
+    margin-top: 16px;
+  }
+
+  .margintoandbottom16 {
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+  
+
+.details {
+    text-align: left;
+  }
+  
+ 
+  
+  
+ 
+  
+ 
+  .centerAlign {
+    text-align: center;
+  }
+  
+  .marginBottom16 {
+    margin-bottom: 16px;
+  }
+  
+  .bold {
+    font-weight: bold;
+  }
+  
+  .yellow {
+    color: yellow;
+    cursor: pointer;
+  }
+  
+  .black {
+    color: none;
+    cursor: pointer;
+  }
+  
+
+  
+  .gridTile {
+    cursor: pointer;
+  }
+  
+ 
+   iframe {
+    width: 100% !important;
+  }
+  
+  @media (max-width: 992px) {
+    .leftDetails {
+      width: 100%;
+      text-align: center;
+    }
+    .middleDetails {
+      width: 90%;
+    }
+    .rightDetails {
+      width: 100%;
+    }
+    .flex-containerDetails {
+      flex-direction: column;
+    }
+    .paddingRight {
+      margin-right: 32px;
+    }
+  }
