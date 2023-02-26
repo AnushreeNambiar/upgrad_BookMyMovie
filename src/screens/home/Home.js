@@ -201,7 +201,7 @@ class Home extends Component {
                 <GridList cols={6} className={classes.gridListUpcomingMovies} cellHeight={250}>
                     {this.state.upcomingMovies.map(movie => (
                         // Also, the cell height of the grid tiles should be 250.
-                        <GridListTile key={"upcoming" + movie.id}  cellHeight={250}>
+                        <GridListTile key={"upcoming" + movie.id} >
                             {/* It should show movie images, and this information must be displayed from the state variable that stores the property ‘poster_url’. You must use the GridListTile component of Material UI for showing the grid tiles. */}
                             <img src={movie.poster_url} className="movie-poster" alt="" />
                             {/* It should show the titles of the movies as well, and this information must be displayed from the state variable that stores the property ‘title’. You must use the GridListTileBar for showing the title. */}
