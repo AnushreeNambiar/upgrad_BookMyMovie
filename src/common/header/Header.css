@@ -1,4 +1,4 @@
-app-header {
+.app-header {
     background-color: #222;
     height: 36px;
     padding: 8px 32px 8px 16px;
@@ -14,3 +14,27 @@ app-header {
     background: #ff7f7f;
 }
 
+.bookshow-button {
+    float: right;
+    margin-right: 8px;
+}
+
+@keyframes app-logo-spin {
+    from { transform: scaleX(-1); }
+}
+
+.tabs {
+    margin-bottom: 20px;
+}
+
+.dispNone {
+    display: none;
+}
+
+.dispBlock {
+    display: block;
+}
+
+.red {
+    color: red;
+}
