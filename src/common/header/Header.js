@@ -124,6 +124,34 @@ class Header extends Component {
         });
     }
 
+    inputFirstNameHandler = (e) => {
+        this.setState({ firstname: e.target.value });
+    }
+
+    inputLastNameHandler = (e) => {
+        this.setState({ lastname: e.target.value });
+    }
+
+    inputEmailHandler = (e) => {
+        this.setState({ email: e.target.value });
+    }
+
+    inputRegisterPasswordHandler = (e) => {
+        this.setState({ registerPassword: e.target.value });
+    }
+
+    inputContactHandler = (e) => {
+        this.setState({ contact: e.target.value });
+    }
+
+    inputUsernameHandler = (e) => {
+        this.setState({ username: e.target.value });
+    }
+
+    inputLoginPasswordHandler = (e) => {
+        this.setState({ loginPassword: e.target.value });
+    }
+
     render() {
         return (
             <div>
@@ -162,6 +190,102 @@ class Header extends Component {
                         : ""
                     }
                 </header>
+                <Modal
+                    ariaHideApp={false}
+                    isOpen={this.state.isModalOpen}
+                    contentLabel="Login"
+                    onRequestClose={this.closeModal}
+                    style={customStyles}
+                >
+                    <Tabs className="tabs" value={this.state.value} onChange={this.tabChangeHandler}>
+                        <Tab label="Login" />
+                        <Tab label="Register" />
+                    </Tabs>
+
+                    {this.state.value === 0 &&
+                        <TabContainer>
+                            <FormControl required>
+                                <InputLabel htmlFor="username">Username</InputLabel>
+                                <Input id="username" type="text" username={this.state.username} onChange={this.inputUsernameHandler} />
+                                <FormHelperText className={this.state.usernamePresent}>
+                                    <span className="red">required</span>
+                                </FormHelperText>
+                            </FormControl>
+                            <br /><br />
+                            <FormControl required>
+                                <InputLabel htmlFor="loginPassword">Password</InputLabel>
+                                <Input id="loginPassword" type="password" loginpassword={this.state.loginPassword} onChange={this.inputLoginPasswordHandler} />
+                                <FormHelperText className={this.state.loginPasswordPresent}>
+                                    <span className="red">required</span>
+                                </FormHelperText>
+                            </FormControl>
+                            <br /><br />
+                            {this.state.loggedIn === true &&
+                                <FormControl>
+                                    <span className="successText">
+                                        Login Successful!
+                                    </span>
+                                </FormControl>
+                            }
+                            <br /><br />
+                            <Button variant="contained" color="primary" onClick={this.loginClickHandler}>LOGIN</Button>
+                        </TabContainer>
+                    }
+
+                    {this.state.value === 1 &&
+                        <TabContainer>
+                            <FormControl required>
+                                <InputLabel htmlFor="firstname">First Name</InputLabel>
+                                <Input id="firstname" type="text" firstname={this.state.firstname} onChange={this.inputFirstNameHandler} />
+                                <FormHelperText className={this.state.firstnamePresent}>
+                                    <span className="red">required</span>
+                                </FormHelperText>
+                            </FormControl>
+                            <br /><br />
+                            <FormControl required>
+                                <InputLabel htmlFor="lastname">Last Name</InputLabel>
+                                <Input id="lastname" type="text" lastname={this.state.lastname} onChange={this.inputLastNameHandler} />
+                                <FormHelperText className={this.state.lastnamePresent}>
+                                    <span className="red">required</span>
+                                </FormHelperText>
+                            </FormControl>
+                            <br /><br />
+                            <FormControl required>
+                                <InputLabel htmlFor="email">Email</InputLabel>
+                                <Input id="email" type="text" email={this.state.email} onChange={this.inputEmailHandler} />
+                                <FormHelperText className={this.state.emailPresent}>
+                                    <span className="red">required</span>
+                                </FormHelperText>
+                            </FormControl>
+                            <br /><br />
+                            <FormControl required>
+                                <InputLabel htmlFor="registerPassword">Password</InputLabel>
+                                <Input id="registerPassword" type="password" registerpassword={this.state.registerPassword} onChange={this.inputRegisterPasswordHandler} />
+                                <FormHelperText className={this.state.registerPasswordPresent}>
+                                    <span className="red">required</span>
+                                </FormHelperText>
+                            </FormControl>
+                            <br /><br />
+                            <FormControl required>
+                                <InputLabel htmlFor="contact">Contact No.</InputLabel>
+                                <Input id="contact" type="text" contact={this.state.contact} onChange={this.inputContactHandler} />
+                                <FormHelperText className={this.state.contactPresent}>
+                                    <span className="red">required</span>
+                                </FormHelperText>
+                            </FormControl>
+                            <br /><br />
+                            {this.state.registrationSuccess === true &&
+                                <FormControl>
+                                    <span className="successText">
+                                        Registration Successful. Please Login!
+                                      </span>
+                                </FormControl>
+                            }
+                            <br /><br />
+                            <Button variant="contained" color="primary" onClick={this.registerClickHandler}>REGISTER</Button>
+                        </TabContainer>
+                    }
+                </Modal>
             </div>
         )
     }
